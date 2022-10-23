@@ -17,7 +17,7 @@ export default function PageTwo() {
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
-          Page Two
+          About
         </Typography>
 
         <Typography gutterBottom>

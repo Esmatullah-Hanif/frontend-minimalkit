@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Stack, AppBar, Toolbar, IconButton, Button, RadioGroup } from '@mui/material';
+import { Stack, AppBar, Toolbar, IconButton, Button, Typography } from '@mui/material';
 // utils
 import { bgBlur } from '../../../utils/cssStyles';
 // hooks
@@ -43,8 +43,7 @@ export default function Header({ onOpenNav }) {
 
   const isOffset = useOffSetTop(HEADER.H_DASHBOARD_DESKTOP) && !isNavHorizontal;
 
-  const OPTIONS = ['light', 'dark'];
-  const { themeMode, onChangeMode } = useSettingsContext();
+  const { themeMode, onToggleMode } = useSettingsContext();
 
   const renderContent = (
     <>
@@ -55,6 +54,7 @@ export default function Header({ onOpenNav }) {
           <Iconify icon="eva:menu-2-fill" />
         </IconButton>
       )}
+      {/* <Typography variant="h4" color="textPrimary"></Typography> */}
 
       {/* <Searchbar /> */}
 
@@ -69,18 +69,11 @@ export default function Header({ onOpenNav }) {
         {/* ------ darkmode button ---------------- */}
         
 
-        <RadioGroup name="themeMode" value={themeMode} onChange={onChangeMode}>
-          <StyledWrap>
-            {OPTIONS.map((mode) => (
-              <IconButton key={mode} selected={themeMode === mode}>
-                <SvgColor src={`/assets/icons/setting/${mode === 'light' ? 'ic_sun' : 'ic_moon'}.svg`} />
-
-                <MaskControl value={mode} />
-              </IconButton>
-            ))}
-          </StyledWrap>
-        </RadioGroup>
-
+        <IconButton color={themeMode === 'dark' ? 'warning' : 'default'} onClick={onToggleMode} >
+              <SvgColor
+                src={`/assets/icons/setting/ic_${themeMode === 'light' ? 'moon' : 'sun'}.svg`}
+              />
+            </IconButton>
 
         {/* <ContactsPopover /> */}
 

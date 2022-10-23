@@ -1,7 +1,19 @@
+import { useState } from 'react';
 import { m } from 'framer-motion';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Button, Box, Container, Stack } from '@mui/material';
+import { 
+  Button, 
+  Box, 
+  Container, 
+  Stack,
+  Dialog,
+  TextField,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  DialogContentText
+ } from '@mui/material';
 // utils
 import { bgGradient } from '../../utils/cssStyles';
 // routes
@@ -20,7 +32,6 @@ export default function HomeAdvertisement() {
     <Container component={MotionViewport}>
       <Stack
         alignItems="center"
-        direction={{ xs: 'column', md: 'row' }}
         sx={{
           ...bgGradient({
             direction: '135deg',
@@ -31,8 +42,9 @@ export default function HomeAdvertisement() {
           pb: { xs: 5, md: 0 },
         }}
       >
-        <Content />
         <Description />
+        <Content />
+        
       </Stack>
     </Container>
   );
@@ -46,25 +58,25 @@ function Description() {
       sx={{
         textAlign: {
           xs: 'center',
-          md: 'left',
+          md: 'center',
         },
       }}
     >
       <Box
         component={m.div}
         variants={varFade().inDown}
-        sx={{ color: 'common.white', mb: 5, typography: 'h2' }}
+        sx={{ color: 'common.white', mb: 1, p: 2, typography: 'h2' }}
       >
-        Get started with
-        <br /> minimal kit today
+        sign up for the
+        <br /> beta release
       </Box>
 
       <Stack
-        direction={{ xs: 'column', md: 'row' }}
-        justifyContent={{ xs: 'center', md: 'flex-start' }}
+        direction={{ xs: 'column', md: 'column' }}
+        justifyContent={{ xs: 'center', md: 'center' }}
         spacing={2}
       >
-        <m.div variants={varFade().inRight}>
+        {/* <m.div variants={varFade().inRight}>
           <Button
             color="inherit"
             size="large"
@@ -79,9 +91,9 @@ function Description() {
           >
             Purchase Now
           </Button>
-        </m.div>
+        </m.div> */}
 
-        <m.div variants={varFade().inRight}>
+        {/* <m.div variants={varFade().inRight}>
           <Button
             color="inherit"
             size="large"
@@ -94,7 +106,7 @@ function Description() {
           >
             Get Free Version
           </Button>
-        </m.div>
+        </m.div> */}
       </Stack>
     </Box>
   );
@@ -103,22 +115,59 @@ function Description() {
 // ----------------------------------------------------------------------
 
 function Content() {
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
   return (
+    
     <Stack component={m.div} variants={varFade().inUp} alignItems="center">
-      <m.div
-        animate={{
-          y: [-20, 0, -20],
-        }}
-        transition={{ duration: 4, repeat: Infinity }}
-      >
-        <Image
-          visibleByDefault
-          disabledEffect
-          alt="rocket"
-          src="/assets/images/home/rocket.png"
-          sx={{ maxWidth: 460 }}
-        />
-      </m.div>
+    <div>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here. We will send updates
+            occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            fullWidth
+            type="email"
+            margin="dense"
+            variant="outlined"
+            label="Email Address"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="inherit">
+            Cancel
+          </Button>
+          <Button onClick={handleClose} variant="contained">
+            Subscribe
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <Button
+        color="inherit"
+        size="large"
+        variant="outlined"
+        onClick={handleClickOpen}
+        rel="noopener"
+        startIcon={<Iconify icon="eva:email-outline" width={16} sx={{ mr: 0.5 }} />}
+        sx={{ mb: 2, color: 'common.white', '&:hover': { borderColor: 'inherit' }, }}
+        >
+        Subscribe
+      </Button>
+    </div>
     </Stack>
   );
 }

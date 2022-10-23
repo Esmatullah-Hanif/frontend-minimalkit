@@ -11,19 +11,19 @@ import { MotionViewport, varFade } from '../../components/animate';
 const CARDS = [
   {
     icon: ' /assets/icons/home/ic_make_brand.svg',
-    title: 'Branding',
-    description: 'Consistent design makes it easy to brand your own.',
+    title: 'Realtime',
+    description: 'Constantly updated with the latest fundraising data.',
   },
   {
     icon: ' /assets/icons/home/ic_design.svg',
-    title: 'UI & UX Design',
+    title: 'Enriched',
     description:
-      'The kit is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects.',
+      'All companies use are enricher, which we are constantly improving upon to add useful company info.',
   },
   {
     icon: ' /assets/icons/home/ic_development.svg',
-    title: 'Development',
-    description: 'Easy to customize and extend, saving you time and money.',
+    title: 'Exportable',
+    description: 'Easy to download and extend, saving you time and money.',
   },
 ];
 
@@ -58,13 +58,13 @@ export default function HomeMinimal() {
         >
           <m.div variants={varFade().inUp}>
             <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
-              Minimal UI
+              Fundraise Data
             </Typography>
           </m.div>
 
           <m.div variants={varFade().inDown}>
             <Typography variant="h2">
-              Realtime data on every <br /> recent fundraise
+              to discover and find <br /> new companies
             </Typography>
           </m.div>
         </Stack>
@@ -82,7 +82,7 @@ export default function HomeMinimal() {
             <m.div variants={varFade().inUp} key={card.title}>
               <StyledCard
                 sx={{
-                  ...(index === 1 && {
+
                     boxShadow: (theme) => ({
                       md: `-40px 40px 80px ${
                         theme.palette.mode === 'light'
@@ -90,7 +90,6 @@ export default function HomeMinimal() {
                           : alpha(theme.palette.common.black, 0.4)
                       }`,
                     }),
-                  }),
                 }}
               >
                 <Image

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // @mui
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { IconButton, Typography } from '@mui/material';
+import { IconButton } from '@mui/material';
 // data
 import { supabase } from '../../../components/supabaseClient';
 // components
@@ -14,9 +14,9 @@ import Iconify from '../../../components/iconify/Iconify';
 
 const columns = [
   {
-    field: 'pub_date',
+    field: 'earliest_date',
     headerName: 'Date',
-    width: 300,
+    width: 120,
   },
   {
     field: 'funding_amount',
@@ -29,18 +29,9 @@ const columns = [
     width: 160,
   },
   {
-    field: 'company',
+    field: 'company_name',
     headerName: 'Company',
-    width: 200,
-  },
-  {
-    field: 'guid',
-    headerName: 'Source',
-    width: 300,
-    renderCell: (params) => 
-    <Typography variant="body2" sx={{ textDecoration: 'underline' }} noWrap>
-      <a href={`${params.value}`} target="_blank" rel="noreferrer">{params.value} </a>,
-    </Typography>
+    width: 120,
   },
   // {
   //   field: 'fullName',
@@ -76,9 +67,8 @@ const DataGridFunds = () => {
 
   async function getFundsData() {
     const { data } = await supabase
-    .from('funding_round_news_items')
+    .from('FundingRoundsDemo')
     .select()
-    .order('pub_date', { ascending: false })
     setTabledata(data)
     console.log("data--", data);
   }
@@ -87,12 +77,10 @@ const DataGridFunds = () => {
   columns={columns}
   rows={tableData}
   getRowId={(row: any) => row.id}
-  components={{ Toolbar: GridToolbar }}
-  componentsProps={{
-    toolbar: {
-      showQuickFilter: true,
-      quickFilterProps: { debounceMs: 500 },
-    },
+  // checkboxSelection
+  // disableSelectionOnClick 
+  components={{
+    Toolbar: GridToolbar,
   }}
   />;
 

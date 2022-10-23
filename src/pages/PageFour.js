@@ -17,7 +17,7 @@ export default function PageFour() {
 
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Typography variant="h3" component="h1" paragraph>
-          Page Four
+          Explore companies
         </Typography>
 
         <Typography gutterBottom>

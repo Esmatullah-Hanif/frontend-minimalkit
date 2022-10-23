@@ -26,7 +26,7 @@ function NavHorizontal() {
         top: HEADER.H_DASHBOARD_DESKTOP_OFFSET,
       }}
     >
-      <Toolbar
+      {/* <Toolbar
         sx={{
           ...bgBlur({
             color: theme.palette.background.default,
@@ -34,7 +34,7 @@ function NavHorizontal() {
         }}
       >
         <NavSectionHorizontal data={navConfig} />
-      </Toolbar>
+      </Toolbar> */}
 
       <Shadow />
     </AppBar>

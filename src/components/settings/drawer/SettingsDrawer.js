@@ -60,7 +60,9 @@ export default function SettingsDrawer() {
 
   return (
     <>
-      {!open && <ToggleButton open={open} notDefault={notDefault} onToggle={handleToggle} />}
+      {/* {!open && <ToggleButton open={open} notDefault={notDefault} onToggle={handleToggle} />} */}
+
+      {/* Commented out the settings drawer until we have user preferences / fanciness later */}
 
       <Drawer
         anchor="right"

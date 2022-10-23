@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 // @mui
 import { useTheme } from '@mui/material/styles';
-import { Stack, AppBar, Toolbar, IconButton } from '@mui/material';
+import { Stack, AppBar, Toolbar, IconButton, Button, RadioGroup } from '@mui/material';
 // utils
 import { bgBlur } from '../../../utils/cssStyles';
 // hooks
@@ -19,6 +19,10 @@ import AccountPopover from './AccountPopover';
 import LanguagePopover from './LanguagePopover';
 import ContactsPopover from './ContactsPopover';
 import NotificationsPopover from './NotificationsPopover';
+import NavSectionHorizontal from '../../../components/nav-section/horizontal/NavSectionHorizontal'
+import navConfig from '../nav/config';
+import { StyledCard, StyledWrap, MaskControl } from '../../../components/settings/styles';
+import SvgColor from '../../../components/svg-color/SvgColor';
 
 // ----------------------------------------------------------------------
 
@@ -39,6 +43,9 @@ export default function Header({ onOpenNav }) {
 
   const isOffset = useOffSetTop(HEADER.H_DASHBOARD_DESKTOP) && !isNavHorizontal;
 
+  const OPTIONS = ['light', 'dark'];
+  const { themeMode, onChangeMode } = useSettingsContext();
+
   const renderContent = (
     <>
       {isDesktop && isNavHorizontal && <Logo sx={{ mr: 2.5 }} />}
@@ -57,9 +64,27 @@ export default function Header({ onOpenNav }) {
 
         {/* <NotificationsPopover /> */}
 
+        {isDesktop && isNavHorizontal && <NavSectionHorizontal data={navConfig} />}
+
+        {/* ------ darkmode button ---------------- */}
+        
+
+        <RadioGroup name="themeMode" value={themeMode} onChange={onChangeMode}>
+          <StyledWrap>
+            {OPTIONS.map((mode) => (
+              <IconButton key={mode} selected={themeMode === mode}>
+                <SvgColor src={`/assets/icons/setting/${mode === 'light' ? 'ic_sun' : 'ic_moon'}.svg`} />
+
+                <MaskControl value={mode} />
+              </IconButton>
+            ))}
+          </StyledWrap>
+        </RadioGroup>
+
+
         {/* <ContactsPopover /> */}
 
-        <AccountPopover />
+        {/* <AccountPopover /> */}
       </Stack>
     </>
   );

@@ -4,6 +4,7 @@ import { m, useScroll, useSpring } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 // sections
+import DataGridFunds from '../sections/mui/data-grid/DataGridFunds';
 import {
   HomeHero,
   HomeMinimal,
@@ -15,7 +16,9 @@ import {
   HomeAdvertisement,
   HomeCleanInterfaces,
   HomeHugePackElements,
+  HomeDataGrid
 } from '../sections/home';
+
 
 // ----------------------------------------------------------------------
 
@@ -54,7 +57,7 @@ export default function HomePage() {
 
       {progress}
 
-      <HomeHero />
+      {/* <HomeHero /> */}
 
       <Box
         sx={{
@@ -65,9 +68,12 @@ export default function HomePage() {
       >
         <HomeMinimal />
 
-        <HomeHugePackElements />
+        <HomeDataGrid />
+        
 
-        <HomeForDesigner />
+        {/* <HomeHugePackElements /> */}
+
+        {/* <HomeForDesigner />
 
         <HomeDarkMode />
 
@@ -79,7 +85,7 @@ export default function HomePage() {
 
         <HomeLookingFor />
 
-        <HomeAdvertisement />
+        <HomeAdvertisement /> */}
       </Box>
     </>
   );

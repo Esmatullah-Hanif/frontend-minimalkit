@@ -9,3 +9,4 @@ export { default as HomeAdvertisement } from './HomeAdvertisement';
 export { default as HomeCleanInterfaces } from './HomeCleanInterfaces';
 export { default as HomeHugePackElements } from './HomeHugePackElements';
 export { default as HomeDataGrid } from './HomeDataGrid';
+export { default as HomeHeadline } from './HomeHeadline';

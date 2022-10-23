@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { m, useScroll, useSpring } from 'framer-motion';
 // @mui
-import { useTheme } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 // sections
 import DataGridFunds from '../sections/mui/data-grid/DataGridFunds';
@@ -16,9 +16,10 @@ import {
   HomeAdvertisement,
   HomeCleanInterfaces,
   HomeHugePackElements,
-  HomeDataGrid
+  HomeDataGrid,
 } from '../sections/home';
-
+import HomeHeadline from '../sections/home/HomeHeadline'
+import Footer from '../layouts/Footer';
 
 // ----------------------------------------------------------------------
 
@@ -52,7 +53,7 @@ export default function HomePage() {
   return (
     <>
       <Helmet>
-        <title> The starting point for your next project | Minimal UI</title>
+        <title> Fundraise Data </title>
       </Helmet>
 
       {progress}
@@ -66,14 +67,17 @@ export default function HomePage() {
           bgcolor: 'background.default',
         }}
       >
-        <HomeMinimal />
+        
+        <HomeHeadline />
 
         <HomeDataGrid />
+
+        <HomeMinimal />
         
 
-        {/* <HomeHugePackElements /> */}
+        {/* <HomeHugePackElements />
 
-        {/* <HomeForDesigner />
+        <HomeForDesigner />
 
         <HomeDarkMode />
 
@@ -83,9 +87,11 @@ export default function HomePage() {
 
         <HomePricingPlans />
 
-        <HomeLookingFor />
+        <HomeLookingFor /> */}
 
-        <HomeAdvertisement /> */}
+        <HomeAdvertisement />
+
+        <Footer/>
       </Box>
     </>
   );

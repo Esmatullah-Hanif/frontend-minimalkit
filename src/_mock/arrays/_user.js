@@ -6,20 +6,18 @@ import { randomNumberRange, randomInArray } from '../utils';
 export const _userAbout = {
   id: _mock.id(1),
   cover: _mock.image.cover(1),
-  role: 'UI Designer',
+  role: 'Auto',
   follower: randomNumberRange(999, 99999),
   following: randomNumberRange(999, 99999),
   quote:
-    'Tart I love sugar plum I love oat cake. Sweet roll caramels I love jujubes. Topping cake wafer..',
+    'Tesla Motors specializes in developing a full range of electric vehicles.',
   country: _mock.address.country(1),
   email: _mock.email(1),
   company: _mock.company(1),
   school: _mock.company(2),
   socialLinks: {
-    facebookLink: `https://www.facebook.com/caitlyn.kerluke`,
-    instagramLink: `https://www.instagram.com/caitlyn.kerluke`,
-    linkedinLink: `https://www.linkedin.com/in/caitlyn.kerluke`,
-    twitterLink: `https://www.twitter.com/caitlyn.kerluke`,
+    linkedinLink: `https://www.linkedin.com/company/tesla-motors/`,
+    twitterLink: `https://www.twitter.com/tesla/`,
   },
 };
 

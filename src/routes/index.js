@@ -18,6 +18,7 @@ import {
   LoginPage, 
   PageThree,
   HomePage, 
+  UserProfilePage,
 } from './elements';
 
 // ----------------------------------------------------------------------
@@ -57,6 +58,7 @@ export default function Router() {
             { path: 'four', element: <PageFour /> },
             { path: 'five', element: <PageFive /> },
             { path: 'six', element: <PageSix /> },
+            { path: 'seven', element: <UserProfilePage /> },
           ],
         },
       ],

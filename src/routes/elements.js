@@ -25,3 +25,6 @@ export const PageSix = Loadable(lazy(() => import('../pages/PageSix')));
 export const Page404 = Loadable(lazy(() => import('../pages/Page404')));
 
 export const HomePage = Loadable(lazy(() => import('../pages/HomePage')));
+
+// DASHBOARD: USER
+export const UserProfilePage = Loadable(lazy(() => import('../pages/UserProfilePage')));

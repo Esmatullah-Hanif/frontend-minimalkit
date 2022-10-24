@@ -29,7 +29,7 @@ export default function Profile({ info }) {
             email={info.email}
             role={info.role}
             company={info.company}
-            school={info.school}
+            // school={info.school}
           />
 
           <ProfileSocialInfo socialLinks={info.socialLinks} />

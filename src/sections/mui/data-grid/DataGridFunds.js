@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 // @mui
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { IconButton, Typography } from '@mui/material';
-// data
-import { supabase } from '../../../components/supabaseClient';
 // components
 import Iconify from '../../../components/iconify/Iconify';
+import { fCurrency, fNumber } from '../../../utils/formatNumber';
+import { fDateTime } from '../../../utils/formatTime';
 
+// data
+import { supabase } from '../../../components/supabaseClient';
 
 
 // ----------------------------------------------------------------------
@@ -16,12 +18,20 @@ const columns = [
   {
     field: 'pub_date',
     headerName: 'Date',
-    width: 300,
+    width: 175,
+    renderCell: (params) =>
+    <Typography variant="body2">
+      {fDateTime(params.value)}
+    </Typography>
   },
   {
     field: 'funding_amount',
     headerName: 'Amount',
     width: 160,
+    renderCell: (params) =>
+    <Typography variant="body2">
+      {fCurrency(params.value)}
+    </Typography>
   },
   {
     field: 'funding_round',

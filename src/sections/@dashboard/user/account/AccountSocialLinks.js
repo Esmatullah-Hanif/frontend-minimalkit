@@ -12,14 +12,14 @@ import FormProvider, { RHFTextField } from '../../../../components/hook-form';
 // ----------------------------------------------------------------------
 
 const SOCIAL_LINKS = [
-  {
-    value: 'facebookLink',
-    icon: <Iconify icon="eva:facebook-fill" width={24} />,
-  },
-  {
-    value: 'instagramLink',
-    icon: <Iconify icon="ant-design:instagram-filled" width={24} />,
-  },
+  // {
+  //   value: 'facebookLink',
+  //   icon: <Iconify icon="eva:facebook-fill" width={24} />,
+  // },
+  // {
+  //   value: 'instagramLink',
+  //   icon: <Iconify icon="ant-design:instagram-filled" width={24} />,
+  // },
   {
     value: 'linkedinLink',
     icon: <Iconify icon="eva:linkedin-fill" width={24} />,
@@ -34,8 +34,8 @@ const SOCIAL_LINKS = [
 
 AccountSocialLinks.propTypes = {
   socialLinks: PropTypes.shape({
-    facebookLink: PropTypes.string,
-    instagramLink: PropTypes.string,
+    // facebookLink: PropTypes.string,
+    // instagramLink: PropTypes.string,
     linkedinLink: PropTypes.string,
     twitterLink: PropTypes.string,
   }),
@@ -45,8 +45,8 @@ export default function AccountSocialLinks({ socialLinks }) {
   const { enqueueSnackbar } = useSnackbar();
 
   const defaultValues = {
-    facebookLink: socialLinks.facebookLink,
-    instagramLink: socialLinks.instagramLink,
+    // facebookLink: socialLinks.facebookLink,
+    // instagramLink: socialLinks.instagramLink,
     linkedinLink: socialLinks.linkedinLink,
     twitterLink: socialLinks.twitterLink,
   };

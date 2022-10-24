@@ -71,6 +71,7 @@ export const PATH_DASHBOARD = {
     four: path(ROOTS_DASHBOARD, '/user/four'),
     five: path(ROOTS_DASHBOARD, '/user/five'),
     six: path(ROOTS_DASHBOARD, '/user/six'),
+    seven: path(ROOTS_DASHBOARD, '/user/seven'),
     new: path(ROOTS_DASHBOARD, '/user/new'),
     list: path(ROOTS_DASHBOARD, '/user/list'),
     cards: path(ROOTS_DASHBOARD, '/user/cards'),

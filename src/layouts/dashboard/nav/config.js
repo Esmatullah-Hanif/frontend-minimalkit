@@ -30,6 +30,7 @@ const navConfig = [
         children: [
           { title: 'explore companies', path: PATH_DASHBOARD.user.four },
           { title: 'find jobs', path: PATH_DASHBOARD.user.five },
+          { title: 'example company', path: PATH_DASHBOARD.user.seven },
         ],
       },
     ],

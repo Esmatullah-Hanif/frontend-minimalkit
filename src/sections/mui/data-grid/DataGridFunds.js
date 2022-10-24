@@ -102,6 +102,7 @@ const DataGridFunds = () => {
     toolbar: {
       showQuickFilter: true,
       quickFilterProps: { debounceMs: 500 },
+      
     },
   }}
   />;

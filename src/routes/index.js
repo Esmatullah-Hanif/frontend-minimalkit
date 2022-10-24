@@ -58,7 +58,7 @@ export default function Router() {
             { path: 'four', element: <PageFour /> },
             { path: 'five', element: <PageFive /> },
             { path: 'six', element: <PageSix /> },
-            { path: 'user', element: <UserProfilePage /> },
+            { path: 'UserProfilePage', element: <UserProfilePage /> },
           ],
         },
       ],
